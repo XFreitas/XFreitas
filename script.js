@@ -1,4 +1,74 @@
-document.addEventListener('DOMContentLoaded', () => {
+'use strict'
+
+const temaClaro = document.getElementById('tema-claro');
+const temaEscuro = document.getElementById('tema-escuro');
+const temaAuto = document.getElementById('tema-auto');
+const dropdownTheme = document.getElementById('dropdown-theme');
+
+const minutes_to_string = (minutes) => {
+    if (!minutes) {
+        return '00:00';
+    }
+
+    const hours = String(Math.floor(minutes / 60));
+    const remainingMinutes = String(minutes % 60);
+    return `${hours.padStart(2, '0')}:${remainingMinutes.padStart(2, '0')}`;
+}
+
+class Ciclo {
+    ciclo;
+    horaIrParaACama;
+    horaDormir;
+    tempoDeSono;
+    horaAcordar;
+
+    constructor(ciclo, horaIrParaACama, horaDormir, tempoDeSono, horaAcordar) {
+        this.ciclo = ciclo;
+        this.horaIrParaACama = horaIrParaACama;
+        this.horaDormir = horaDormir;
+        this.tempoDeSono = tempoDeSono;
+        this.horaAcordar = horaAcordar;
+    }
+}
+
+const getStoredTheme = () => localStorage.getItem('theme')
+const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+        return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
+const setTheme = theme => {
+    dropdownTheme.textContent = theme === 'auto' ? '🌞' : theme === 'dark' ? '🌙' : '☀️';
+
+    if (theme === 'auto') {
+        document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+        document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+
+    setStoredTheme(theme);
+}
+
+setTheme(getPreferredTheme())
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+        setTheme(getPreferredTheme())
+    }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    temaClaro.addEventListener('click', () => setTheme('light'));
+    temaEscuro.addEventListener('click', () => setTheme('dark'));
+    temaAuto.addEventListener('click', () => setTheme('auto'));
+
     const dormirAcordar = document.getElementById('dormir_acordar');
     const hora = document.getElementById('hora');
     const calcularHorarios = document.getElementById('calcular_horarios');
@@ -87,29 +157,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-const minutes_to_string = (minutes) => {
-    if (!minutes) {
-        return '00:00';
-    }
-
-    const hours = String(Math.floor(minutes / 60));
-    const remainingMinutes = String(minutes % 60);
-    return `${hours.padStart(2, '0')}:${remainingMinutes.padStart(2, '0')}`;
-}
-
-class Ciclo {
-    ciclo;
-    horaIrParaACama;
-    horaDormir;
-    tempoDeSono;
-    horaAcordar;
-
-    constructor(ciclo, horaIrParaACama, horaDormir, tempoDeSono, horaAcordar) {
-        this.ciclo = ciclo;
-        this.horaIrParaACama = horaIrParaACama;
-        this.horaDormir = horaDormir;
-        this.tempoDeSono = tempoDeSono;
-        this.horaAcordar = horaAcordar;
-    }
-}
