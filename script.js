@@ -99,17 +99,26 @@ window.addEventListener('DOMContentLoaded', () => {
             if (dormirAcordar.value === 'acordar') {
                 cicloObj.horaAcordar = horaValue.format('HH:mm');
                 cicloObj.ciclo = (totalCiclos - i);
-                const minutes = cicloObj.ciclo * 90;
+                let minutes = cicloObj.ciclo * 90;
                 cicloObj.horaDormir = horaValue.subtract(minutes, 'minute').format('HH:mm');
                 cicloObj.horaIrParaACama = horaValue.subtract((minutes + 15), 'minute').format('HH:mm');
                 cicloObj.tempoDeSono = minutes_to_string(minutes);
 
                 ciclos.unshift(cicloObj);
+            } else if (dormirAcordar.value === 'ir_para_a_cama') {
+                cicloObj.horaIrParaACama = horaValue.format('HH:mm');
+                cicloObj.horaDormir = horaValue.add(15, 'minute').format('HH:mm');
+                cicloObj.ciclo = i + 1;
+                let minutes = cicloObj.ciclo * 90;
+                cicloObj.horaAcordar = horaValue.add(minutes + 15, 'minute').format('HH:mm');
+                cicloObj.tempoDeSono = minutes_to_string(minutes);
+
+                ciclos.push(cicloObj);
             } else {
                 cicloObj.horaDormir = horaValue.format('HH:mm');
                 cicloObj.horaIrParaACama = horaValue.subtract(15, 'minute').format('HH:mm');
                 cicloObj.ciclo = i + 1;
-                const minutes = cicloObj.ciclo * 90;
+                let minutes = cicloObj.ciclo * 90;
                 cicloObj.horaAcordar = horaValue.add(minutes, 'minute').format('HH:mm');
                 cicloObj.tempoDeSono = minutes_to_string(minutes);
 
