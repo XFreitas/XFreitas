@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const hora = document.getElementById('hora');
     const calcularHorarios = document.getElementById('calcular_horarios');
 
-    hora.value = dayjs().add(15, 'minute').format('HH:mm');
+    hora.value = dayjs().format('HH:mm');
 
     /**
      * @type {HTMLTableElement}
@@ -165,4 +165,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }
     });
+
 });
