@@ -1,13 +1,13 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://www.sbt.com.br/assets/images/logo-sbt.png" group-title="Variedades",SBT Interior SP
-https://aovivo.maissbt.com/v1/manifest/215c0da80606fed29372070168106400a6ca7e1a/SSAI_TITAN_V3/02c8c4cc-1c83-4724-bfd6-8c9aec12cb97/4.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/pt/0/0e/Logotipo_da_Record_%28rede_de_televis%C3%A3o%29.png" group-title="Variedades", RecordTV
-https://spo4.akamaized.net/linear/hls/pa/event/8ssSlUQxSUimorxHsFz_SQ/stream/0ec4c100-ab6b-4af6-b59c-2d5a14f0a892:SCL2/master.m3u8?hdnts=exp=1763817275~acl=/*~hmac=97f69e29679f75dcc9101493d6b7f37c284d8e18910fd01a4ec89277e1edc67b&CMCD=mtp%3D500%2Cot%3Dm%2Csf%3Dh%2Csid%3D%226aa2ef43-8115-430c-ad5e-896175d10559%22%2Csu
-
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/66/TV_Evangelizar_logo_2019.png" group-title="Religioso",TV Evangelizar
 https://tvevangelizar.brasilstream.com.br/hls/tvevangelizar/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/pt/b/b4/Rede_S%C3%A9culo_21.jpg" group-title="Religioso", Rede Século 21
 https://cdn.live.br1.jmvstream.com/w/LVW-19954/LVW19954_V2nXt9iI2m/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.sbt.com.br/assets/images/logo-sbt.png" group-title="Variedades",SBT Interior SP
+https://aovivo.maissbt.com/v1/master/215c0da80606fed29372070168106400a6ca7e1a/SSAI_TITAN_V3/indexMobile.m3u8?ads.start=1&ads.w=1997&ads.h=914&ads.cb=1765033923283&ads.ip=173.254.116.232&ads.ua=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/142.0.0.0%20Safari/537.36%20Edg/142.0.0.0&ads.lat=&ads.lon=&ads.dnt=&ads.ic=&ads.ap=1&ads.app_bundle=&ads.app_name=%252Bsbt&ads.app_store_url=&ads.inv_partner_domain=sbt.com.br&ads.mute=0&ads.placement=1&ads.content_id=&ads.content_episode=&ads.content_title=SBT%20Noticias%201%20Edicao&ads.content_series=&ads.content_season=&ads.content_genre=variedade&ads.content_livestream=1&ads.content_producer_name=SBT&ads.content_categories=variedade&ads.content_keywords=&ads.rating=G&ads.language=pt-br&ads.network_name=sbt&ads.did=3533075074915119&ads.device_make=Microsoft%2520Edge%2520142.0&ads.device_model=desktop&ads.brand_name=&ads.country=BR&ads.ifa_type=dpid&ads.content_custom_1_param=uat-1.16.6&ads.content_custom_2_param=Web&ads.content_custom_3_param=2025-12-06T15:12:03.283Z
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/pt/0/0e/Logotipo_da_Record_%28rede_de_televis%C3%A3o%29.png" group-title="Variedades", RecordTV
+https://spo4.akamaized.net/linear/hls/pa/event/8ssSlUQxSUimorxHsFz_SQ/stream/44421b08-668d-4c18-b5b1-7e9ac9a8daf5:SCL2/master.m3u8?hdnts=exp=1765034375~acl=/*~hmac=3c9ec7b4b5ab95a1a95af12db77c3ce331d787b0f3aafc85913199bd569aaf57&CMCD=mtp%3D500%2Cot%3Dm%2Csf%3Dh%2Csid%3D%228d195129-168f-45c7-9c1c-08e7364c1b0d%22%2Csu
