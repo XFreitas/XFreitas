@@ -1,0 +1,69 @@
+<html lang="pt" data-bs-theme="auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Sono</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-cols-lg-auto d-flex align-items-end g-3 mt-3">
+            <div class="col-12">
+                <label for="dormir_acordar" class="form-label" data-i18n="label_mode">DORMIR / ACORDAR</label>
+                <select id="dormir_acordar" class="form-select">
+                    <option value="ir_para_a_cama" selected data-i18n="option_bedtime">IR PARA A CAMA</option>
+                    <option value="acordar" data-i18n="option_wake">ACORDAR</option>
+                    <option value="dormir" data-i18n="option_sleep">DORMIR</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="hora" class="form-label" data-i18n="label_time">HORA</label>
+                <input type="time" class="form-control" id="hora" value="">
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary" id="calcular_horarios" data-i18n="btn_calculate">CALCULAR</button>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <table class="table table-striped text-center table-sm" id="tabela_horarios">
+                    <thead>
+                        <tr>
+                            <th data-i18n="th_cycles">Ciclos</th>
+                            <th data-i18n="th_sleep_time">Tempo de sono</th>
+                            <th data-i18n="th_bedtime">Hora de ir para a cama</th>
+                            <th data-i18n="th_sleep">Hora de dormir</th>
+                            <th data-i18n="th_wake">Hora de acordar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="text-center" data-i18n="empty_table">Selecione os horários e pressione o botão CALCULAR.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-absolute bottom-0 end-0 p-3">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-theme"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                ☀️
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdown-theme">
+                <li><span style="cursor: pointer;" class="dropdown-item" id="tema-claro" data-i18n="theme_light">☀️ Claro</span></li>
+                <li><span style="cursor: pointer;" class="dropdown-item" id="tema-escuro" data-i18n="theme_dark">🌙 Escuro</span></li>
+                <li><span style="cursor: pointer;" class="dropdown-item" id="tema-auto" data-i18n="theme_auto">🌞 Auto</span></li>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
